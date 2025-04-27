@@ -18,6 +18,7 @@ public interface IRestore : IHazSolution, INukeBuild
     Target Restore => _ => _
         .Executes(() =>
         {
+            throw new Exception("test");
             DotNetRestore(_ => _
                 .Apply(RestoreSettingsBase)
                 .Apply(RestoreSettings));
